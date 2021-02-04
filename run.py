@@ -3,13 +3,10 @@ from ursina import camera, mouse
 from ursina.prefabs.first_person_controller import FirstPersonController
 from perlin import *
 
-
 app = Ursina()
 
 sky_texture = load_texture('assets/skybox.png')
 arm_texture = load_texture('assets/arm_texture.png')
-
-
 
 window.fps_counter.enabled = False
 window.exit_button.visible = True
@@ -21,6 +18,7 @@ def update():
     else:
         hand.passive()
 
+
 class Voxel(Button):
     def __init__(self, position=(0, 0, 0)):
         super().__init__(
@@ -29,7 +27,7 @@ class Voxel(Button):
             model='assets/block',
             origin_y=0.5,
             texture='white_cube',
-            color=color.color(0, 0, random.uniform(0.9, 1)),
+            color=color.color(random.uniform(0.5, 1), 0, random.uniform(0.9, 1)),
             scale=0.5)
 
     def input(self, key):
@@ -38,7 +36,6 @@ class Voxel(Button):
                 voxel = Voxel(position=self.position + mouse.normal)
 
             if key == 'right mouse down':
-
                 destroy(self)
 
 
@@ -72,10 +69,9 @@ class Hand(Entity):
 for z in range(width):
     for x in range(length):
         voxel = Voxel(position=(x, 0, z))
-        height = int(elevation[x][z]//.3)
+        height = int(elevation[x][z] // .3)
         for i in range(height):
             voxel = Voxel(position=(x, i, z))
-
 
 player = FirstPersonController()
 sky = Sky()
