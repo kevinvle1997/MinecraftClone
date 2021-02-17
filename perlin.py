@@ -2,12 +2,12 @@ from opensimplex import OpenSimplex
 
 gen = OpenSimplex()
 
-length = 50
-width = 50
+length = 20
+width = 20
 
-freq1 = 1
+freq1 = 15
 freq2 = 10
-freq3 = 6
+freq3 = 20
 
 
 def noise(nx, ny):
