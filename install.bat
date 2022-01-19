@@ -1,0 +1,3 @@
+@echo OFF
+@echo Installing Required Packages...
+python3 -m pip install opensimplex ursina
