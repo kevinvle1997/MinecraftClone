@@ -18,7 +18,7 @@ And of course MinecraftClone itself is open source with a [public repository][di
 
 Dillinger requires Ursina and OpenSimplex to run.
 
-Install the libraries and run "run.py".
+Run the ```install.bat``` and wait for packages to install. Then run ```run.py```
 
 
 ### Todos
